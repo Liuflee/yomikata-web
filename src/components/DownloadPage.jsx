@@ -63,7 +63,7 @@ const DownloadPage = () => {
         </section>
         <section>
           <h2>Descarga Yomikata</h2>
-          {mobile ? (
+          {isMobile ? (
             <a href={qrCodeUrl} className="btn-download">
               Descargar ahora
             </a>
