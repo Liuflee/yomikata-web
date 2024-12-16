@@ -1,0 +1,117 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yomikata</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #a64e6b;
+      padding: 2rem 0;
+      text-align: center;
+      color: white;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    h1, h2 {
+      font-weight: 400;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 1.75rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    .qr-code {
+      text-align: center;
+    }
+    .qr-code img {
+      max-width: 150px;
+      margin: 1rem auto;
+      display: block;
+    }
+
+    #buttonContainer {
+      text-align: center;
+    }
+
+    .btn-download {
+      background: #a64e6b;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      text-decoration: none;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+      display: inline-block; /* Esto asegura que el botón sea un bloque en línea */
+      margin: 1rem auto; /* Centra el botón dentro del contenedor */
+    }
+    .btn-download:hover {
+      background: #8a3e58;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Yomikata</h1>
+    <p>La app que organiza tus libros y captura citas de imágenes.</p>
+  </header>
+  <main class="container">
+    <section>
+      <h2>¿Qué es Yomikata?</h2>
+      <p>
+        Yomikata es la aplicación perfecta para los amantes de los libros. Guarda tus lecturas, 
+        organiza listas, y extrae citas de libros físicos utilizando nuestra avanzada tecnología OCR.
+      </p>
+    </section>
+    <section>
+      <h2>Descarga Yomikata</h2>
+      <div id="downloadContent">
+        <div id="qrCode" class="qr-code">
+          <p>Escanea este código QR para descargar la app:</p>
+          <img src="/images/qr-code.png" alt="QR Code de Yomikata">
+        </div>
+        <div id="buttonContainer"> 
+          <a id="downloadButton" href="https://drive.google.com/uc?export=download&id=15UCGNhCox3N2g68aBSZCqNeetxGzkK5d" class="btn-download hidden">Descargar ahora</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const isMobileDevice = window.innerWidth <= 768;
+    const qrCode = document.getElementById('qrCode');
+    const downloadButton = document.getElementById('downloadButton');
+
+    if (isMobileDevice) {
+      // Ocultar el QR y mostrar el botón en dispositivos móviles
+      if (qrCode) qrCode.classList.add('hidden');
+      if (downloadButton) downloadButton.classList.remove('hidden');
+    } else {
+      // Ocultar el botón y mostrar el QR en pantallas más grandes
+      if (qrCode) qrCode.classList.remove('hidden');
+      if (downloadButton) downloadButton.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
