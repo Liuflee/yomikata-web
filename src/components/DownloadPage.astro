@@ -8,18 +8,18 @@
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #fff;
+      background: #f9f9f9; /* Fondo ligeramente gris */
       color: #333;
       line-height: 1.6;
     }
     header {
       background: #a64e6b;
-      padding: 2rem 0;
+      padding: 2.5rem 0; /* Aumentar el padding */
       text-align: center;
       color: white;
     }
     .container {
-      padding: 2rem;
+      padding: 2.5rem; /* Aumentar el padding */
       max-width: 600px;
       margin: 0 auto;
     }
@@ -27,16 +27,16 @@
       font-weight: 400;
     }
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem; /* Aumentar tamaño de fuente */
       margin-bottom: 0.5rem;
     }
     h2 {
-      font-size: 1.75rem;
-      margin-top: 2rem;
+      font-size: 2rem; /* Aumentar tamaño de fuente */
+      margin-top: 2.5rem; /* Aumentar margen superior */
       margin-bottom: 1rem;
     }
     p {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem; /* Aumentar margen inferior */
     }
     .qr-code {
       text-align: center;
@@ -58,13 +58,15 @@
       text-decoration: none;
       border-radius: 20px;
       font-weight: 600;
-      font-size: 0.9rem;
-      transition: background 0.3s ease;
-      display: inline-block; /* Esto asegura que el botón sea un bloque en línea */
-      margin: 1rem auto; /* Centra el botón dentro del contenedor */
+      font-size: 1rem; /* Aumentar tamaño de fuente */
+      transition: background 0.3s ease, box-shadow 0.3s ease; /* Añadir transición de sombra */
+      display: inline-block;
+      margin: 1rem auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
     }
     .btn-download:hover {
       background: #8a3e58;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa al pasar el ratón */
     }
     .hidden {
       display: none;
