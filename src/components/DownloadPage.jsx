@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const DownloadPage = () => {
-  const [mobile, setMobile] = useState(false);
-  
-  const isMobile = () => /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    setIsMobile(checkIsMobile());
+  }, []);
+
   const qrCodeUrl = 'https://drive.google.com/uc?export=download&id=15UCGNhCox3N2g68aBSZCqNeetxGzkK5d';
 
   return (
-    
     <div>
       <style>
         {`
@@ -37,7 +39,6 @@ const DownloadPage = () => {
             max-width: 200px;
             margin: 20px auto;
             display: block;
-            
           }
           .btn-download {
             background: #a64e6b;
@@ -46,6 +47,7 @@ const DownloadPage = () => {
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            display: inline-block;
           }
         `}
       </style>
