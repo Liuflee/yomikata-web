@@ -1,13 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { isMobile } from 'react-device-detect';
 
 const DownloadPage = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkIsMobile = () => /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    setIsMobile(checkIsMobile());
-  }, []);
-
   const qrCodeUrl = 'https://drive.google.com/uc?export=download&id=15UCGNhCox3N2g68aBSZCqNeetxGzkK5d';
 
   return (
@@ -65,16 +59,16 @@ const DownloadPage = () => {
         </section>
         <section>
           <h2>Descarga Yomikata</h2>
-          {isMobile ? (
-            <a href={qrCodeUrl} className="btn-download">
-              Descargar ahora
-            </a>
-          ) : (
-            <div className="qr-code">
-              <p>Escanea este código QR para descargar la app:</p>
-              <img src="/images/qr-code.png" alt="QR Code de Yomikata" />
-            </div>
-          )}
+            {isMobile ? (
+              <a href={qrCodeUrl} className="btn-download">
+                Descargar ahora
+              </a>
+            ) : (
+              <div className="qr-code">
+                <p>Escanea este código QR para descargar la app:</p>
+                <img src="/images/qr-code.png" alt="QR Code de Yomikata" />
+              </div>
+            )}
         </section>
       </main>
     </div>
